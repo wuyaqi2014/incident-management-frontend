@@ -4,40 +4,41 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## Available Scripts
 
-后端启动方式：参考后端项目中的readme：https://github.com/wuyaqi2014/incident-management-backend.git
-需要先启动后端，再启动前端，默认绑定后端的端口为8080，在package.json文件里配置
-![alt text](image-3.png)
-在该项目目录下，执行如下命令，
+后端启动方式：参考后端项目中的readme：https://github.com/wuyaqi2014/incident-management-backend.git\
+需要先启动后端，再启动前端，默认绑定后端的端口为8080，在package.json文件里配置\
+![alt text](image-3.png)\
+在该项目目录下，执行如下命令，\
 
 ### `npm start`
 
 Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-打开后页面展示：
-![alt text](image.png)
+Open [http://localhost:3000](http://localhost:3000) to view it in your browser.\
+打开后页面展示：\
+![alt text](image.png)\
 
-新建add：增加一条记录
-![alt text](image-1.png)
-增加三条记录后：
-![alt text](image-2.png)
-可支持分页展示，每页2条、4条、6条。
-点击每条记录的edit按钮，会把数据回填到上方输入框内，最右边的按钮变为update
-![alt text](image-4.png)
-修改字段，点击update，将title从1改为title1
+新建add：增加一条记录\
+![alt text](image-1.png)\
+增加三条记录后：\
+![alt text](image-2.png)\
+可支持分页展示，每页2条、4条、6条。\
+点击每条记录的edit按钮，会把数据回填到上方输入框内，最右边的按钮变为update\
+![alt text](image-4.png)\
+修改字段，点击update，将title从1改为title1\
+![alt text](image-8.png)\
 ![alt text](image-5.png)
-更新成功后，行数3条不变，第一条的title为title1.
+更新成功后，行数3条不变，第一条的title为title1.\
 
-再多增加几条记录，分页查询演示：共5条记录，第三页：
-![alt text](image-6.png)
+再多增加几条记录，分页查询演示：共5条记录，第三页：\
+![alt text](image-6.png)\
 
-删除：点击每条旁边的删除按钮，即可删除成功，删除只剩一条记录：
-![alt text](image-7.png)
+删除：点击每条旁边的删除按钮，即可删除成功，删除只剩一条记录：\
+![alt text](image-7.png)\
 
 
-由于时间原因，还有待完善的地方：
-1、目前启动方式为npm start，本地启动。可以改成npm builder后，打包生成cs文件，上传服务器再执行。
-2、目前仅支持正确的处理流程，异常的情况，后端有返回，前端未展示出来。
-3、每次进入页面，list接口总是会调用两次。待优化。
+由于时间原因，还有待完善的地方：\
+1、目前启动方式为npm start，本地启动。可以改成npm builder后，打包生成cs文件，上传服务器再执行。\
+2、目前仅支持正确的处理流程，异常的情况，后端有返回，前端未展示出来。\
+3、每次进入页面，list接口总是会调用两次。待优化。\
 
 
 The page will reload when you make changes.\
