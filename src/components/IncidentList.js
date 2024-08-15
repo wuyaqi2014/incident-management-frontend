@@ -34,6 +34,11 @@ function IncidentList({ onEdit, onDelete }) {
 
   const columns = [
     {
+      title: "id",
+      dataIndex: "id",
+      key: "id",
+    },
+    {
       title: "title",
       dataIndex: "title",
       key: "title",
@@ -53,16 +58,39 @@ function IncidentList({ onEdit, onDelete }) {
       render: (text, record, index) => {
         return (
           <span>
-            {moment(record.startTime).format("YYYY-MM-DD")} {moment(record.endTime).format("YYYY-MM-DD")}{" "}
-            {record.remark} ({record.createdBy})
+            {moment(record.startTime).format("YYYY-MM-DD")} {"--"}{moment(record.endTime).format("YYYY-MM-DD")}
           </span>
         );
       },
     },
     {
-      title: "operator",
-      dataIndex: "operator",
-      key: "operator",
+      title: "remark",
+      dataIndex: "remark",
+      key: "remark",
+      render: (text, record, index) => {
+        return (
+          <span>
+            {record.remark}
+          </span>
+        );
+      },
+    },
+    {
+      title: "creater",
+      dataIndex: "creater",
+      key: "creater",
+      render: (text, record, index) => {
+        return (
+          <span>
+            {record.createdBy}
+          </span>
+        );
+      },
+    },
+    {
+      title: "action",
+      dataIndex: "action",
+      key: "action",
       render: (text, record, index) => {
         return (
           <>
@@ -83,7 +111,7 @@ function IncidentList({ onEdit, onDelete }) {
         current: page,
         total,
         showSizeChanger: true,
-        pageSizeOptions:[2,4,6],
+        pageSizeOptions:[2,4,6,10],
         onShowSizeChange: (current, size) => {
           console.log(current, size)
           handleFetchList(current, size)
