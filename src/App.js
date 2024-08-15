@@ -1,23 +1,36 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import IncidentList from "./components/IncidentList";
+import IncidentForm from "./components/IncidentForm";
+import axios from "axios";
+import { Button, Row } from "antd";
+import './App.css'
 
 function App() {
+  const [incidentToEdit, setIncidentToEdit] = useState(null);
+
+  const handleEdit = (incident) => {
+    setIncidentToEdit(incident);
+  };
+
+  const handleDelete = (id) => {
+    axios
+      .put(`/rest/v1/incident/delete_incident/${id}`)
+      .then(() => {
+        setIncidentToEdit(null); // Clear form
+        window.location.reload(); // Refresh list
+      })
+      .catch((error) => console.error("There was an error deleting the incident!", error));
+  };
+
+  const handleSave = () => {
+    setIncidentToEdit(null);
+    window.location.reload(); // Refresh list
+  };
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <IncidentForm incidentToEdit={incidentToEdit} onSave={handleSave} />
+      <IncidentList onEdit={handleEdit} onDelete={handleDelete} />
     </div>
   );
 }
