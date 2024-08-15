@@ -4,6 +4,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## Available Scripts
 
+后端启动方式：参考后端项目中的readme：https://github.com/wuyaqi2014/incident-management-backend.git
 需要先启动后端，再启动前端，默认绑定后端的端口为8080，在package.json文件里配置
 ![alt text](image-3.png)
 在该项目目录下，执行如下命令，
