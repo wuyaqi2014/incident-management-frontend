@@ -36,7 +36,7 @@ Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
 
 由于时间原因，还有待完善的地方：  
-1、目前启动方式为npm start，本地启动。可以改成npm builder后，打包生成cs文件，上传服务器再执行。  
+1、目前启动方式为npm start，本地启动。可以改成npm builder后，打包生成cs文件，上传http-server服务器再执行。  
 2、每次进入页面，list接口总是会调用两次。待优化。  
 
 

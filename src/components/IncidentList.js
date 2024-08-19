@@ -7,7 +7,7 @@ function IncidentList({ onEdit, onDelete }) {
   const [incidents, setIncidents] = useState([]);
 
   const [page, setPage] = useState(1);
-  const [pageSize, setPageSize] = useState(2);
+  const [pageSize, setPageSize] = useState(10);
   const [total, setTotal] = useState(0);
 
 
@@ -111,7 +111,7 @@ function IncidentList({ onEdit, onDelete }) {
         current: page,
         total,
         showSizeChanger: true,
-        pageSizeOptions:[2,4,6,10],
+        pageSizeOptions:[10,20,30],
         onShowSizeChange: (current, size) => {
           console.log(current, size)
           handleFetchList(current, size)
